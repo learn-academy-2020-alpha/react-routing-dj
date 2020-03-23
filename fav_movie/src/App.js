@@ -6,31 +6,40 @@ import {
   Link,
   Switch
 } from "react-router-dom"
+
 import Home from "./components/Home1"
+import BlueJasmine from "./components/BlueJasmine"
+import CapeFear from "./components/CapeFear"
+import Joker from "./components/Joker"
+import PrideAndPrejudice from "./components/PrideAndPrejudice"
+import Shrek2 from "./components/Shrek2"
+import TheDarkKnight from "./components/TheDarkKnight"
 
 
 const App = () => {
     return (
-      {/* 3. The set of links and paths are all wrapped in the "BrowserRouter as Router" component */}
+        <>
         <Router>
-            <div>
-                <h1>Here is App.js Handling Our Routing</h1>
-                {/* 4. Using a semantic tag to denote the navigation links */}
-                <nav>
-                    <ul>
+        {/* <Link to="/">Home</Link>
+        <Route path="/" exact component = { Home } /> */}
+                <h1>Here are Jonas' and Danny's favorite movies: </h1>
+                <ul>
                     <li>
-                        {/* 5. Creating the anchor tags using the Link component from React Router */}
-                        <Link to="/">Home</Link>
+                    <Link to="/">Home</Link>
                     </li>
-                    </ul>
-                </nav>
+                    <li>
+                    <Link to="/bluejasmine"> Blue Jasmine </Link>
+                    </li>
+                </ul>
 
-                {/* 6. Calling the components we imported from "pages" to render in response to the Link */}
-                <Route path="/" exact component={ Home } />
-            </div>
+                <br/>
+                <Switch>
+                <Route path="/" exact component={ Home } />    
+                <Route path="/bluejasmine/" component={ BlueJasmine } />
+                </Switch>
         </Router>
+        </>
     )
 }
 export default App
 
-export default App;
